@@ -1,19 +1,20 @@
 # Simple API with FastAPI & UV
 
-A lightweight and efficient API built using **FastAPI**, **UV**, and **Python**. This API provides random side hustle ideas and money quotes. It also includes a **count feature** to track the number of available entries.
+This project is a simple API built using **Python**, **FastAPI**, and **UV**. It provides random **side hustle ideas** and **money quotes** to inspire users. The API supports fetching a single item or multiple items using a count parameter.
 
 ## 🚀 Features
+- **Get Side Hustle Ideas** 💡
+- **Fetch Money Quotes** 💰
+- **Support for Single or Multiple Entries**
+- **FastAPI Auto-generated Docs (Swagger UI)**
+- **API Key Security for Restricted Access**
 
-- **Side Hustles Endpoint**: Get random side hustle suggestions.
-- **Money Quotes Endpoint**: Fetch random financial wisdom quotes.
-- **Count Endpoint**: Retrieve the total number of side hustles and quotes.
-- **FastAPI & UV**: Super-fast performance and automatic API documentation.
-- **API Key Security**: Restricted access to endpoints.
+---
 
-## 🛠 Installation & Setup
+## 🔧 Installation & Setup
 
 ### 1️⃣ Install UV
-Install UV (if not already installed):
+Install UV if you haven't already:
 ```sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
@@ -38,45 +39,98 @@ uv add fastapi[standard]
 ```
 
 ### 4️⃣ Activate UV Virtual Environment
-#### Windows:
+For **Windows**:
 ```sh
 .venv\Scripts\activate
 ```
-#### Linux/macOS:
+For **Linux/macOS**:
 ```sh
 source .venv/bin/activate
 ```
 
-### 5️⃣ Run the API
+### 5️⃣ Run the API Server
 ```sh
 fastapi dev main.py
 ```
 
-## 🔍 Testing the API
-Paste the following into your browser:
-- **Side Hustles**: [http://127.0.0.1:8000/side_hustles?api_key=1234567890](http://127.0.0.1:8000/side_hustles?api_key=1234567890)
-- **Money Quotes**: [http://127.0.0.1:8000/money_quotes?api_key=1234567890](http://127.0.0.1:8000/money_quotes?api_key=1234567890)
-- **Count (New Feature)**: [http://127.0.0.1:8000/count?api_key=1234567890](http://127.0.0.1:8000/count?api_key=1234567890)
+---
 
-### Or via Swagger UI:
-- [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) (Interactive API Playground)
+##  Usage & Endpoints
 
-## 📌 API Endpoints
+###  Get a Random Side Hustle Idea
+**Single Result:**
+```
+GET /side_hustles?api_key=1234567890
+```
+**Multiple Results (Specify Count):**
+```
+GET /side_hustles?api_key=1234567890&count=3
+```
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/side_hustles` | GET | Returns a random side hustle idea |
-| `/money_quotes` | GET | Returns a random money quote |
-| `/count` | GET | Returns the total count of side hustles and quotes |
+###  Get a Random Money Quote
+**Single Result:**
+```
+GET /money_quotes?api_key=1234567890
+```
+**Multiple Results (Specify Count):**
+```
+GET /money_quotes?api_key=1234567890&count=2
+```
 
-## 🛡️ API Security
-This API requires an **API Key** for access. The default API key is `1234567890`. Pass it as a query parameter: `?api_key=YOUR_API_KEY`
-
-## 🔥 Why FastAPI?
-- **Super Fast** 🚀 – Async support makes it one of the fastest Python frameworks.
-- **Auto-Generated Docs** 📜 – Comes with built-in Swagger UI.
-- **Easy & Modern** 💡 – Type hints, automatic validation, and dependency injection.
+###  Test in Swagger UI
+You can test the API in Swagger UI:
+```
+http://127.0.0.1:8000/docs
+```
 
 ---
-💻 **Happy Coding!** 🚀
+
+##  Example Responses
+
+### **Single Side Hustle Idea**
+```json
+{
+  "side_hustle": "Freelancing - Start offering your skills online!"
+}
+```
+
+### **Multiple Side Hustles**
+```json
+{
+  "side_hustles": [
+    "Dropshipping - Sell without handling inventory!",
+    "Stock Market - Invest and watch your money grow!",
+    "Affiliate Marketing - Earn by promoting products!"
+  ]
+}
+```
+
+### **Single Money Quote**
+```json
+{
+  "money_quote": "Money is a terrible master but an excellent servant. – P.T. Barnum"
+}
+```
+
+### **Multiple Money Quotes**
+```json
+{
+  "money_quotes": [
+    "If you don’t find a way to make money while you sleep, you will work until you die. – Warren Buffett",
+    "Opportunities don’t happen. You create them. – Chris Grosser"
+  ]
+}
+```
+
+---
+
+##  Why FastAPI?
+- **Super Fast** – Async support for blazing speed!
+- **Auto-Generated Docs** – Built-in Swagger UI for easy API testing.
+- **Easy & Modern** – Type hints, validation, and dependency injection.
+
+---
+
+## 📌 License
+This project is open-source and free to use! 🎉
 
