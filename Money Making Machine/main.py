@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import time
 import requests
-from streamlit_extras import add_vertical_space
+from streamlit_extras.add_vertical_space import add_vertical_space
 
 # Set page config
 st.set_page_config(page_title="Money Making Machine", page_icon="💰", layout="wide")
