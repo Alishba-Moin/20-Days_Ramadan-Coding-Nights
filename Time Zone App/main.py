@@ -29,7 +29,7 @@ sidebar_features = st.sidebar.radio("Go to:", [
     "Time Difference Calculator"
     ])
 
-# Feature -> 1
+# Feature -> 1=
 if sidebar_features == "Check Time in Multiple Zones":
     st.header("🌐 Check Time in Multiple Zones")
 
