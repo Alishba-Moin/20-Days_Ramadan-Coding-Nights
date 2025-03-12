@@ -84,3 +84,4 @@ if not data.empty:
     )
 
     st.write("Build with ❤️ by [ALISHBA MOIN](https://github.com/Alishba-moin)")
+
